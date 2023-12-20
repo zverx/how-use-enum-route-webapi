@@ -1,0 +1,5 @@
+###
+GET http://localhost:5010/objects/second
+
+###
+GET http://localhost:5010/objects/four
