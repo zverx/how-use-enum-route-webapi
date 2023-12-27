@@ -12,7 +12,7 @@ namespace WebApp.Constraints
 
         public EnumConstraint(string enumTypeName)
         {
-            var enumLocation = typeof(LocationEnums);
+            var enumLocation = typeof(Enums.Index);
 
             if (enumLocation.Namespace is null)
                 throw new Exception("enumLocation.Namespace is null");
