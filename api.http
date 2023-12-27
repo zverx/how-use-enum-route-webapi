@@ -1,5 +1,16 @@
+### Open its in VSCode with extension 'humao.rest-client'
+
+###
+GET http://localhost:5010/objects/first
+
 ###
 GET http://localhost:5010/objects/second
 
 ###
+GET http://localhost:5010/objects/third
+
+###
 GET http://localhost:5010/objects/four
+
+### for HTTP 404
+GET http://localhost:5010/objects/five

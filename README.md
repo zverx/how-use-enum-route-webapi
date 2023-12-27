@@ -15,9 +15,20 @@ The request matched multiple endpoints. Matches: ...
 
 Частично проблему матчинга можно решить с помощью ограничений маршрута (route constraints) по [ссылке](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-8.0#route-constraints)
 
-В моем случае использовались enum в путях, поэтому решил добавить свое ограничение маршрута по enum.  
+В моем случае использовались enum в путях, поэтому решил добавить свое ограничение маршрута по enum.
 
-1. добавляем в метод ConfigureServices 
+1. Создаем класс EnumConstraint, наследованный от Microsoft.AspNetCore.Routing.IRouteConstraint, реализацию можно посмотреть в солюшне.
+
+2. добавляем в метод ConfigureServices 
 ``` csharp
 builder.Services.AddRouting(options => options.ConstraintMap.Add("enum", typeof(EnumConstraint)));
 ```
+
+3. Указываем в пути атрибута HttpGet для контроллера, у которого параметром является enum
+``` csharp
+[HttpGet($"{{type:enum({nameof(ObjectTypeEnum)})}}")]
+public ActionResult GetByType([FromRoute] ObjectTypeEnum type)
+{
+   ...
+}
+``` 

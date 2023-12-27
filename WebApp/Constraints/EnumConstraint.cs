@@ -34,7 +34,7 @@ namespace WebApp.Constraints
         {
             if (values.TryGetValue(routeKey, out object? value))
             {
-                if (Enum.TryParse(_enumType, $"{value}", true, out object? result))
+                if (value != null && Enum.TryParse(_enumType, $"{value}", true, out object? result))
                 {
                     return result != null && Enum.IsDefined(_enumType, result);
                 }

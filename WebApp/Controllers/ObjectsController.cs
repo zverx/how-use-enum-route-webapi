@@ -18,11 +18,5 @@ namespace WebApp.Controllers
         {
             return Ok($"{nameof(GetByFour)}: four");
         }
-
-        [HttpGet("{any}")]
-        public ActionResult GetByAny([FromRoute] string any)
-        {
-            return Ok($"{nameof(GetByAny)}: {any}");
-        }
     }
 }

@@ -22,7 +22,6 @@ namespace WebApp
         public static void ConfigureServices(this WebApplicationBuilder builder)
         {
             builder.Services.AddControllers();
-
             builder.Services.AddRouting(options => options.ConstraintMap.Add("enum", typeof(EnumConstraint)));
         }
 

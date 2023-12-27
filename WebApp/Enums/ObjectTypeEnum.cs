@@ -6,6 +6,8 @@
 
         second,
 
-        third
+        third,
+
+        four
     }
 }
