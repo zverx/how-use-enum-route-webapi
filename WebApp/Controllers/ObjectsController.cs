@@ -3,7 +3,6 @@ using WebApp.Enums;
 
 namespace WebApp.Controllers
 {
-    [Route("objects")]
     [ApiController]
     public class ObjectsController : ControllerBase
     {

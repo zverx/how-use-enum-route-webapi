@@ -2,14 +2,12 @@
 using Microsoft.AspNetCore.Routing;
 using System;
 using System.Linq;
-using WebApp.Enums;
 
 namespace WebApp.Constraints
 {
     public class EnumConstraint : IRouteConstraint
     {
         private readonly Type _enumType;
-
         public EnumConstraint(string enumTypeName)
         {
             var enumLocation = typeof(Enums.Index);
@@ -24,7 +22,6 @@ namespace WebApp.Constraints
 
             _enumType = enums.Single(e => e.Name == enumTypeName);
         }
-
         public bool Match(
             HttpContext? httpContext,
             IRouter? route,

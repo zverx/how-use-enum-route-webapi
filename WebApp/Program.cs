@@ -18,13 +18,11 @@ namespace WebApp
 
             app.Run();
         }
-
         public static void ConfigureServices(this WebApplicationBuilder builder)
         {
             builder.Services.AddControllers();
             builder.Services.AddRouting(options => options.ConstraintMap.Add("enum", typeof(EnumConstraint)));
         }
-
         public static void Configure(this WebApplication app)
         {
             var env = app.Services.GetRequiredService<IWebHostEnvironment>();

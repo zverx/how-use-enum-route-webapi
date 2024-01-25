@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebApp.Controllers
 {
     [ApiController]
-    public class Index : ControllerBase
+    public class IndexController : ControllerBase
     {
         [Route("/error-development")]
         public IActionResult HandleErrorDevelopment()
